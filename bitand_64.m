@@ -17,6 +17,7 @@ function out = bitand_64(a, b)
     % split b into left, and right parts in char string type
     b_left  = b(1:8);
     b_right = b(9:16);
+    %
     % convert b into decimal type
     b_left_dec  = uint32(hex2dec(b_left));
     b_right_dec = uint32(hex2dec(b_right));
