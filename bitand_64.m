@@ -6,7 +6,6 @@
 % that accurate in higher digits, e.g. 52-bits or higher is not reliable
 %
 function out = bitand_64(a, b)
-    % 
     % split a into left, and right parts in char string type
     a_left  = a(1:8);
     a_right = a(9:16);
@@ -33,3 +32,4 @@ function out = bitand_64(a, b)
     % concatenate left and right string
     out = strcat(a_b_left, a_b_right);
 return
+
