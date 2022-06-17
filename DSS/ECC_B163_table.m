@@ -1,9 +1,9 @@
 %
 % ECC B163 ElGama cryptographic system
 %
-% clear all;
+clear;
 clc;
-
+%
 global f fr ifx a b f_dec fr_dec a_dec b_dec;
 m = 163; % B-m == B163
 % split the large number into 6 row, each row is a 8-digit hexadecimal, 
@@ -55,6 +55,7 @@ for im = 32 : 126
         y = multiplication_B(H, x);
         % LHS = y^2 + xy
         left = addition_B(square_B(y), multiplication_B(x, y));
+        %
         % if X is on the curve
         if any(left - right) == 0
             Mx(:, im - 31) = x;
@@ -62,6 +63,7 @@ for im = 32 : 126
             % right
             % left
             flag = 0;
+        %
         % if X is not on the curve
         else
             % brute force to find the point that on the curve
@@ -70,3 +72,4 @@ for im = 32 : 126
     end
 end
 save M_B163 Mx My % saving var Mx, My in M_B163.mat
+%
