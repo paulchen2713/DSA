@@ -148,6 +148,3 @@ fprintf('the recovered message is: %s\n', R_M);
 fprintf('the computation time is:  %s\n', ECC_B163_ElGama1);
 %
 
-
-
-
