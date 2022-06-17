@@ -143,3 +143,4 @@ R_plaintext = char(R_plaintext);
 %
 fprintf('the original  message is: %s \n', plaintext);
 fprintf('the recovered message is: %s \n', R_plaintext);
+
