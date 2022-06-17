@@ -6,11 +6,11 @@
 %   Signature verification: Bob
 %
 % step 1: Alice choose two very large distinct primes p and q, and computes 
-%         n = p * q and £p(n) = (p-1) * (q-1)
+%         n = p * q and Â£p(n) = (p-1) * (q-1)
 % 
-% step 2: Alice choose a random integer e, 1 < e < phi_n, such that gcd(e, £p(n)) = 1 
+% step 2: Alice choose a random integer e, 1 < e < phi_n, such that gcd(e, Â£p(n)) = 1 
 %
-% step 3: Alice finds d, 1 < d < £p(n), such that e * d = 1 mod £p(n)
+% step 3: Alice finds d, 1 < d < Â£p(n), such that e * d = 1 mod Â£p(n)
 %
 % step 4: Alice makes (n, e) public, and keeps (p, q, d) private
 % 
@@ -25,7 +25,7 @@ clc;
 starting_time = cputime; % fetch the current time at the starting time
 %
 % step 1: Alice choose two very large distinct primes p and q, and computes 
-%         n = p * q and £p(n) = (p-1) * (q-1)
+%         n = p * q and Â£p(n) = (p-1) * (q-1)
 %
 N = 13;
 p = prime_generator(N);
@@ -34,13 +34,13 @@ q = prime_generator(N-1);
 n = p * q;
 phi_n = (p-1) * (q-1);
 % 
-% step 2: Alice choose a random integer e, 1 < e < phi_n, such that gcd(e, £p(n)) = 1 
+% step 2: Alice choose a random integer e, 1 < e < phi_n, such that gcd(e, Â£p(n)) = 1 
 %
 flag = 0;
 while flag == 0
     e = floor((phi_n - 2) * rand(1)) + 2;
     %
-    % compute gcd(e, £p(n))
+    % compute gcd(e, Â£p(n))
     %
     % Algorithm 2.19 Extended Euclidean algorithm for integers
     ue = e;     % u
@@ -72,8 +72,8 @@ while flag == 0
     end
 end
 %
-% step 3: Alice finds d, 1 < d < £p(n), such that e * d = 1 mod £p(n)
-%         because m^£p(n) = 1 mod n
+% step 3: Alice finds d, 1 < d < Â£p(n), such that e * d = 1 mod Â£p(n)
+%         because m^Â£p(n) = 1 mod n
 % check if xe is positive, cause we take xe positive only
 if xe < 0
     d = phi_n + xe;
@@ -147,5 +147,4 @@ else
 end
 %
 %
-
 
