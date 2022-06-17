@@ -59,7 +59,9 @@ while xx~=0
 	gg=mod(gg*gg,p);
 	xx=floor(xx/2);
 end
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%
 % signing
 %
 % choose an integer k, 0<k<q
@@ -114,7 +116,7 @@ end
 %
 % compute HASH value m_SHA of the message m
 %
-m='document';
+m = 'document';
 HASHtype='SHA3-512';
 HASHlength=512;
 m_SHA=SHA3_text(m,HASHtype,HASHlength);
@@ -128,7 +130,8 @@ s=mod(ki*mxr,q);
 %
 % send the signature:(m,r,s) to the receiver
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%
 % verifying a signature
 %
 % compute w such that s*w=1 mod q
@@ -208,15 +211,8 @@ v=mod(gy,q);
 % verifying
 %
 if v==r
-	fprintf('\nValid Signature\n');
+    fprintf('\nValid Signature\n');
 else
-	fprintf('\nNot Valid Signature\n');
+    fprintf('\nNot Valid Signature\n');
 end
-
-
-
-
-
-
-
-
+%
