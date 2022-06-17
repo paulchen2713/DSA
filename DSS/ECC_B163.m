@@ -1,9 +1,9 @@
 %
 % ECC B163 ElGama cryptographic system
 %
-% clear all;
+clear;
 clc;
-
+%
 global f fr ifx a b f_dec fr_dec a_dec b_dec;
 m = 163; % B-m == B163
 % split the large number into 6 row, each row is a 8-digit hexadecimal, 
