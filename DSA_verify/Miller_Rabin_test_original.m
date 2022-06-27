@@ -11,9 +11,7 @@ if mod(p, 2) == 0
     p = p - 1;
 end
 %
-%
 p1 = p-1;
-%
 %
 k = 0;
 q = p1;
@@ -69,5 +67,4 @@ end
 % if the result is "inconclusive," means 25% chance that p is not a prime 
 %
 fprintf('the current result is: %s\n', result);
-
 
