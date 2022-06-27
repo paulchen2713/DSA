@@ -1,7 +1,7 @@
 %
 % DSA (Digital Signature Algorithm) main program
+%   ref. Wikipedia Digital Signature Algorithm
 %
-% ref. Wikipedia Digital Signature Algorithm
 clear;
 clc;
 %
@@ -33,9 +33,11 @@ end
 % compute g = h^((p-1) / q) mod p
 %
 pq = (p-1) / q; % pq has to be an integer, keep it unchanged
-g = 1;
+g  = 1;
+%
 pqq = pq; % keep pq unchanged, use pqq for following computation
-hh = h;   % keep h  unchanged, use hh  for following computation
+hh  = h;  % keep h  unchanged, use hh  for following computation
+%
 while pqq ~= 0
     if mod(pqq, 2) == 1
         g = mod(g * hh, p);
@@ -60,6 +62,7 @@ while xx ~= 0
     gg = mod(gg * gg, p);
     xx = floor(xx / 2);
 end
+%
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 %
 % signing a signature
@@ -88,6 +91,7 @@ r = mod(r, q);
 % compute ki, ki * k == 1 mod q, k inverse element
 %
 % Algorithm 2.19 Extended Euclidean algorithm for integers
+%
 ua = k;
 va = q;
 x1a = 1;
@@ -109,10 +113,12 @@ while ua ~= 0
     y2a = y1a;
     y1a = ya;
 end
+%
 % gcd, Greatest Common Divisor
 gcd = va; % variable assigned but unused?
 xa = x2a;
 ya = y2a;
+%
 % check if xa is positive, cause we take xa positive only
 if xa < 0
     ki = xa + q;
@@ -130,9 +136,9 @@ m_SHA = hex2dec(m_SHA(1:8)); % only take first N-bit of the hash value
 %
 % compute s = (ki * SHA(m) + x*r ) mod q
 %
-xr = mod(x * r, q);        % xr == x * r
+xr  = mod(x * r, q);      % xr  == x * r
 mxr = mod(m_SHA + xr, q); % mxr == SHA(m) + xr
-s = mod(ki * mxr, q);
+s   = mod(ki * mxr, q);
 %
 % send the signature to the receiver, signature: (m, r, s)
 %
@@ -148,10 +154,11 @@ x1w = 1;
 y1w = 0;
 x2w = 0;
 y2w = 1;
+%
 % 3. while u != 0
 while uw ~= 0
     % 3.1
-    qw = floor(vw / uw);
+    qw = floor(vw / uw); %
     rw = vw - qw * uw;   % remainder r
     xw = x2w - qw * x1w;
     yw = y2w - qw * y1w;
@@ -166,6 +173,7 @@ end
 gcd = vw;
 xw = x2w;
 yw = y2w;
+%
 % check if xa is positive, cause we take xa positive only
 if xw < 0
     w = xw + q;
@@ -191,7 +199,7 @@ u2 = mod(r * w, q);
 %
 gu1 = 1;
 uu1 = u1; % keep u1 unchanged, use uu1 for following computation
-gg = g;   % keep g  unchanged, use gg  for following computation
+gg  = g;  % keep g  unchanged, use gg  for following computation
 while uu1 ~= 0
     if mod(uu1, 2) == 1
         gu1 = mod(gu1 * gg, p);
@@ -204,12 +212,12 @@ end
 %
 yu2 = 1;
 uu2 = u2; % keep u1 unchanged, use uu1 for following computation
-yy = y;   % keep y  unchanged, use yy  for following computation
+yy  = y;  % keep y  unchanged, use yy  for following computation
 while uu2 ~= 0
     if mod(uu2, 2) == 1
         yu2 = mod(yu2 * yy, p);
     end
-    yy = mod(yy * yy, p);
+    yy  = mod(yy * yy, p);
     uu2 = floor(uu2 / 2);
 end
 %
@@ -225,5 +233,4 @@ if v == r
 elseif v ~= r
     fprintf('\n Invalid Signature \n');
 end
-
 
