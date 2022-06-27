@@ -10,10 +10,10 @@ HASH_type = 'SHAKE256'; % hash type
 HASH_len = 2222; % 
 s_input = 'abc';        % massage input
 %
-%
-% d = 0;
+% d  = 0;
 % dd = 0;
 % subtype = '';
+%
 if strcmp(HASH_type, 'SHA3-224') == 1
     d = 224; % the fixed langth of the massage digest size
     dd = d;  % bit number
@@ -142,7 +142,6 @@ elseif strcmp(subtype, 'XOF') == 1
 end
 HASH = lower(HASH);
 %
-%
 fprintf('HASH value: %s \n', HASH);
 %
 
@@ -159,5 +158,3 @@ fprintf('HASH value: %s \n', HASH);
 %         fprintf('LLL(%d, %d) = %s\n',ix, iy, LLL(ix + 1, iy + 1, :));
 %     end
 % end
-
-
