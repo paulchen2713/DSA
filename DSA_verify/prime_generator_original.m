@@ -66,4 +66,3 @@ fprintf('the current prime is: %d\n', p);
 %         1048545
 %         
 
-
