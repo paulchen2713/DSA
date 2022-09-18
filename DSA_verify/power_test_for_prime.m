@@ -4,7 +4,7 @@
 clear;
 clc;
 %
-p = 13; % prime number p to be tested
+p  = 13; % prime number p to be tested
 PP = zeros(p-1, p); % constract a prime matrix PP
 % ip row
 for ipr = 1 : p-1
@@ -16,3 +16,5 @@ for ipr = 1 : p-1
 end
 %
 % 2nd, 6th, 7th, 11th row are the primitive element
+%
+
