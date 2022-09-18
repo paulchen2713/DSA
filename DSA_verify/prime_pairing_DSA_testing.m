@@ -55,16 +55,6 @@ while flag_prime==0
 		flag_prime=1;
 	end
 end
-%
-%
 fprintf('the current prime pair for DSA are: [p, q] = [%d, %d]\n', p, q);
-
-
-
-
-
-
-
-
-
+%
 
