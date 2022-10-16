@@ -144,9 +144,9 @@ end
 %verify
 %
 if any(v-r)==0
-fprintf('\nAccept.\n');
+		fprintf('\nAccept.\n');
 else
-fprintf('\nNot accept.\n');
+		fprintf('\nNot accept.\n');
 end
 B163_ECDSA_time=cputime-B163_ECDSA_time
 
