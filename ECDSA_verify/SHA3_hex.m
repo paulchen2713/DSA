@@ -1,5 +1,5 @@
 %
-% SHA3 function for text input
+% SHA3 function
 %
 function HASH=SHA3_text(s_input,HASHtype,HASHlength)
     %
