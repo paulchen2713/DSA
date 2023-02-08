@@ -2,7 +2,8 @@
 % DSA (Digital Signature Algorithm) main program
 %
 % simple example for DSA
-% ref. Wikipedia Digital Signature Algorithm
+%   ref. Wikipedia Digital Signature Algorithm
+%
 clear;
 clc;
 %
@@ -76,6 +77,7 @@ k = floor((q-1)*rand(1)) + 1;
 r = 1;
 kk = k; % keep k unchanged, use kk for following computation
 gg = g; % keep g unchanged, use gg for following computation
+%
 while kk ~= 0
     if mod(kk, 2) == 1
         r = mod(r * gg, p);
