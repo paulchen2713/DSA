@@ -1,7 +1,8 @@
 %
 % DSA (Digital Signature Algorithm) main program
 %
-% ref. Wikipedia Digital Signature Algorithm
+%   ref. Wikipedia Digital Signature Algorithm
+%
 clear;
 clc;
 %
